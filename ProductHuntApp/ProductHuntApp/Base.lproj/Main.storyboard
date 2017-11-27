@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="97" id="n9v-mK-lxZ" customClass="cell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="97" id="n9v-mK-lxZ" customClass="MainTableViewCell" customModule="ProductHuntApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n9v-mK-lxZ" id="SFX-8N-Aai" customClass="MainTableViewCell" customModule="ProductHuntApp" customModuleProvider="target">
@@ -81,7 +81,7 @@
                                     <outlet property="nameLabel" destination="hXI-qP-JcB" id="WXZ-Lf-3rX"/>
                                     <outlet property="thumbnailImageView" destination="Pao-vC-8q3" id="nlB-Gy-Wis"/>
                                     <outlet property="upvotesLabel" destination="qO0-ht-mzZ" id="O3g-BT-EGe"/>
-                                    <segue destination="ozT-FC-P0L" kind="show" identifier="itemViewSegie" id="AJC-RT-Spg"/>
+                                    <segue destination="ozT-FC-P0L" kind="show" identifier="itemViewSegue" id="AJC-RT-Spg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

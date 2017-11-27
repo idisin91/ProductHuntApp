@@ -7,6 +7,6 @@ target 'ProductHuntApp' do
 
   # Pods for ProductHuntApp
     pod 'Alamofire', '~> 4.5'
-    
+    pod 'SwiftyJSON'
   
 end

@@ -7,26 +7,28 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
+
 let access_token = "591f99547f569b05ba7d8777e2e0824eea16c440292cce1f8dfb3952cc9937ff"
 
 import Alamofire
 class WebParser {
     static var instance = WebParser()
     private init(){}
-    var data = [CellData]()
+    var data : [CellData] = [CellData()]
     
     func getCount() -> Int {
         return self.data.count
     }
-    
+    var currentTopic: String = "tech"
     func loadData(){
-        let url = "https://api.producthunt.com/v1/posts/all?access_token=\(access_token)&search[topic]=1"
+        let url = "https://api.producthunt.com/v1/categories/\(currentTopic)/posts?access_token=\(access_token)"
         Alamofire.request(url).responseJSON {
             response in
-                print(response.data)
-                if let json = response.result.value {
-                    print("JSON: \(json)")
-                }
+            print(response.data)
+
+            
+            
 
             }
         }

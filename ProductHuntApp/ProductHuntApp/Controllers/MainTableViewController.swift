@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MainTableViewController: UITableViewController {
 
@@ -44,7 +45,15 @@ class MainTableViewController: UITableViewController {
         cell.data = data
         cell.nameLabel.text = data.name
         cell.descriptionLabel.text = data.description
-        
+        if let thumbnailUrl = data.thumbnailURL {
+            Alamofire.request(data.thumbnailURL!).response() {
+                response in
+                if let respData = response.data {
+                    cell.imageView?.image = UIImage(data: respData)
+                }
+            }
+
+        }
         
         return cell
     }
@@ -85,14 +94,20 @@ class MainTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        switch segue.identifier! {
+        case "itemViewSegue":
+            let dest = segue.destination as! ItemViewController
+            let sender = sender as! MainTableViewCell
+            dest.data = sender.data
+        default:
+            break
+        }
     }
-    */
+ 
 
 }
